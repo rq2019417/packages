@@ -1,28 +1,26 @@
-
 # Kconfig file for package stm32f4_hal_driver
 menuconfig PKG_USING_STM32F4_HAL_DRIVER
     bool "STM32 F4 HAL driver package"
     select PKG_USING_STM32F4_CMSIS_DRIVER
     default n
-
 if PKG_USING_STM32F4_HAL_DRIVER
-
     config PKG_STM32F4_HAL_DRIVER_PATH
         string
         default "/packages/peripherals/hal-sdk/stm32/stm32f4_hal_driver"
-
     choice
         prompt "Version"
         help
             Select the package version
-
         config PKG_USING_STM32F4_HAL_DRIVER_LATEST_VERSION
             bool "latest"
     endchoice
-
     config PKG_STM32F4_HAL_DRIVER_VER
        string
        default "latest"    if PKG_USING_STM32F4_HAL_DRIVER_LATEST_VERSION
-
 endif
 
+
+
+; ————————————————
+; 版权声明：本文为RT-Thread论坛用户「mushroom」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+; 原文链接：https://club.rt-thread.org/ask/article/4839095b91c2f849.html
